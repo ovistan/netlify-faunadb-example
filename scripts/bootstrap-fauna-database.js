@@ -30,10 +30,11 @@ function createFaunaDB(key) {
   const client = new faunadb.Client({
     secret: key
   })
-
+  console.log('FaunaDB client configured!')
   /* Based on your requirements, change the schema here */
   return client.query(q.Create(q.Ref('classes'), { name: 'todos' }))
     .then(() => {
+      console.log('Create collections executed!')
       return client.query(
         q.Create(q.Ref('indexes'), {
           name: 'all_todos',
