@@ -28,7 +28,7 @@ if (process.env.FAUNADB_SERVER_SECRET) {
 function createFaunaDB(key) {
   console.log('Create the fauna database schema!')
   const client = new faunadb.Client({
-    secret: key
+    secret: key,
   })
   console.log('FaunaDB client configured!')
   /* Based on your requirements, change the schema here */
